@@ -1,0 +1,28 @@
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(60, 60, 60, 0.2) 0%, rgba(10, 10, 10, 0.4) 50%), url(https://a.tfstatic.com/images/backgrounds/background1.jpg);">
+ <h2> Best Restaurants in Town </h2>
+</div>
+
+  <ul>
+    <div class="container">
+
+     <div class=".cards-container">
+        <% @restaurants.each do |restaurant|  %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(60, 60, 60, 0.2) 0%, rgba(10, 10, 10, 0.4) 50%),url(https://picsum.photos/300/400/?blur)" href="#{<%= restaurant_path(restaurant) %>}">
+            <div class="text">
+           <%= link_to restaurant.name, restaurant_path(restaurant) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container">
+      <img src="https://puu.sh/AnfCc/f5d457d696.png" alt="">
+    </div>
+
+
+
+
+<p><%= link_to "edit a new restaurant", restaurants_new_path() %></p>
